@@ -1,11 +1,6 @@
-export class TodoModel {
-  rowNumber: number;
-  rowDescription: string;
-  rowAssigned: string;
+export interface TodoModel {
+  id: number;
+  description: string;
+  assigned: string;
 
-  constructor(rowNumber: number, rowDescription: string, rowAssigned: string) {
-    this.rowNumber = rowNumber;
-    this.rowDescription = rowDescription;
-    this.rowAssigned = rowAssigned;
-  }
 }

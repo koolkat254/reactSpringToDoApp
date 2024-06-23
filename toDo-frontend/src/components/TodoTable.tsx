@@ -3,7 +3,7 @@ import {TodoModel} from "../models/TodoModel";
 
 interface TodoTableProps {
   todos: TodoModel[];
-  deleteTodo: (rowNumber: number) => void;
+  deleteTodo: (id: number) => void;
 }
 
 export const ToDoTable: React.FC<TodoTableProps> = ({ todos, deleteTodo }) => {
@@ -14,15 +14,12 @@ export const ToDoTable: React.FC<TodoTableProps> = ({ todos, deleteTodo }) => {
           <th scope="col">#</th>
           <th scope="col">Description</th>
           <th scope="col">Assigned</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         {todos.map((todo) => (
-          <TodoRowItem
-            key={todo.rowNumber}
-            todo={todo}
-            deleteTodo={deleteTodo}
-          />
+          <TodoRowItem key={todo.id} todo={todo} deleteTodo={deleteTodo} />
         ))}
       </tbody>
     </table>

@@ -9,10 +9,18 @@ interface TodoRowItemProps {
 
 export const TodoRowItem: React.FC<TodoRowItemProps> = ({ todo, deleteTodo }) => {
   return (
-    <tr onClick={() => deleteTodo(todo.rowNumber)}>
-      <th scope="row">{todo.rowNumber}</th>
-      <td>{todo.rowDescription}</td>
-      <td>{todo.rowAssigned}</td>
+    <tr key={todo.id}>
+      <th scope="row">{todo.id}</th>
+      <td>{todo.description}</td>
+      <td>{todo.assigned}</td>
+      <td>
+        <button
+          className="btn btn-danger"
+          onClick={() => deleteTodo(todo.id)}
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 };
