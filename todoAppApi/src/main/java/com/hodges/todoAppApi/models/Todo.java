@@ -13,6 +13,7 @@ public class Todo {
 
     private String description;
     private String assigned;
+    private String number;
 
     public Todo() {
     }
